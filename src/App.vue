@@ -62,12 +62,12 @@
       <!--<li  v-if="item.SSUITRC">    {{item.type}},  {{item.authorsToString}}  "{{item.title}}" <b>{{item.academyName}}</b> <b v-if="item.상태!=='published'"> {{item.상태}}</b> , {{item.SSUITRC}}, {{item.비고}}</li>-->
 
     <!--</ul>-->
+    <!--과제별로 구분하지 않고 모아보기 샘플 예시-->
+    <ul v-for="item in users " v-if="!showMain&&IITPVisible">
 
-    <!--<ul v-for="item in users " v-if="!showMain&&IITPVisible">-->
+      <li  v-if="item.EWHAIITP">    {{item.type}},  {{item.authorsToString}}  "{{item.title}}" <b>{{item.academyName}}</b> <b v-if="item.상태!=='published'"> {{item.상태}} </b>, {{item.EWHAIITP}}, {{item.비고}}</li>
 
-      <!--<li  v-if="item.EWHAIITP">    {{item.type}},  {{item.authorsToString}}  "{{item.title}}" <b>{{item.academyName}}</b> <b v-if="item.상태!=='published'"> {{item.상태}} </b>, {{item.EWHAIITP}}, {{item.비고}}</li>-->
-
-    <!--</ul>-->
+    </ul>
 
 
     <!--<p><b>SCI(E) Journals</b></p>-->
