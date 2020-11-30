@@ -51,31 +51,41 @@ npm run dev
 1. 스프레드시트에 과제탭을 하나더 만든다. (ex SSUABC)
 2. script 안 data에 SSUABCVisible를 추가한다. (ex. SSUABCVisible : false,) 
 
-<img src="/src/assets/data_sample.png">
+<img src="/src/assets/data_sample.png" width="720" height="480">
 
-1. 버튼을 추가합니다. 아래 코드를 사진위치에 추가하면됩니다. template 태그 바로 아래쪽에 있음
+3. 버튼을 추가합니다. 아래 코드를 사진위치에 추가하면됩니다. template 태그 바로 아래쪽에 있음
 
-   <img src="/src/assets/add_button.png">
+<img src="/src/assets/add_button.png">
 
-2. ```
-   <b-button :pressed.sync="SSUABCVisible" variant="outline-primary">SSUABC</b-button>
+```html
+<b-button :pressed.sync="SSUABCVisible" variant="outline-primary">SSUABC</b-button>
+```
+
+4. template 태그 안 내용 가장 아래쪽에 미리 추가해둔 샘플이 있습니다. 수정해서 사용하면됩니다.
+
+   4.1 과제를 1개 이상 추가할시 그대로 복사해서 수정해서 사용하시면됩니다.
+
+5. 추가해둔 샘플에서 item.SSUNRF -> item.SSUABC로 전부 수정합니다.
+
+   ```html
+   <li v-if="item.SSUNRF"> -> <li v-if="item.SSUABC">
    ```
 
-3. template 태그 안 내용 가장 아래쪽에 미리 추가해둔 샘플이 있습니다. 수정해서 사용하면됩니다.
+6. 추가해둔 샘플에서 NRFVisible => SSUABCVisible 로 전부 수정합니다.
 
-   5.1 과제를 1개 이상 추가할시 그대로 복사해서 수정해서 사용하시면됩니다.
+   ```html
+   <span v-if="!showMain&&NRFVisible"> -> <span v-if="!showMain&&SSUABCVisible">
+   ```
 
-6. 추가해둔 샘플에서 item.SSUNRF -> item.SSUABC로 전부 수정합니다.
+7. 과제 기여도를 보여주는 부분을 수정해야합니다.
 
-7. 추가해둔 샘플에서 NRFVisible => SSUABCVisible 로 전부 수정합니다.
-
-8. ```
+   ```html
    <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span>  
-   -> <span v-if="item.SSUABC">SSUABC : {{item.SSUABC}}</span
+   -> <span v-if="item.SSUABC">SSUABC : {{item.SSUABC}}</span>
    다음과 같이 <li> 태그 끝에 해당내용을 수정해줘야 합니다. 
    ```
 
-
+   
 
 
 
