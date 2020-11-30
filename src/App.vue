@@ -408,7 +408,7 @@
       =======================================================
     </p>
 
-    <p><b>Journal Articles</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>Journal Articles</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeSciArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeSciArr) )) "> {{item.year}}</dt>
@@ -418,7 +418,7 @@
     </dl>
     <br>
 
-    <p><b>International Conferences</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>International Conferences</b></p></span>
 
     <br>
     <dl v-for="(item, index) in sortByDate(makeIcfArr)" v-if="!showMain&&IITPVisible">
@@ -430,7 +430,7 @@
     <br>
 
 
-    <p><b>Machine Learning Workshop Papaers/ Neuroscience Conference Abstracts</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>Machine Learning Workshop Papaers/ Neuroscience Conference Abstracts</b></p></span>
 
     <br>
     <dl v-for="(item, index) in sortByDate(makeWsArr)" v-if="!showMain&&IITPVisible">
@@ -441,7 +441,7 @@
     </dl>
     <br>
 
-    <P><b>Domestic Journal Articles</b></P>
+    <span v-if="!showMain&&IITPVisible"><P><b>Domestic Journal Articles</b></P></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKciArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKciArr) )) "> {{item.year}}</dt>
@@ -451,7 +451,7 @@
     </dl>
     <br>
 
-    <p><b>Domestic Conference Proceedings</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>Domestic Conference Proceedings</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKcfArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKcfArr) )) "> {{item.year}}</dt>
@@ -461,7 +461,7 @@
     </dl>
     <br>
 
-    <p><b>국내특허등록</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>국내특허등록</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKrIssPatentArr) )) "> {{item.year}}</dt>
@@ -471,7 +471,7 @@
     </dl>
     <br>
 
-    <p><b>Software Registrations</b></p>
+    <span v-if="!showMain&&IITPVisible"><p><b>Software Registrations</b></p></span>
     <br>
     <br>
 
