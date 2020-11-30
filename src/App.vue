@@ -2,19 +2,7 @@
 
 <template>
   <div id="app">
-    <h1>this is test page</h1>
-
-    <!--<b-button-group size="sm">-->
-      <!--<b-button-->
-        <!--v-for="(btn, idx) in buttons"-->
-        <!--:key="idx"-->
-        <!--:pressed.sync="btn.state"-->
-        <!--variant="primary"-->
-      <!--&gt;-->
-        <!--{{ btn.caption }}-->
-      <!--</b-button>-->
-    <!--</b-button-group>-->
-    <!--<p>Pressed States: <strong>{{ btnStates }}</strong></p>-->
+    <h1>This is bmil web creater</h1>
 
     <b-button :pressed.sync="showMain" variant="outline-primary">showMain</b-button>
     <b-button :pressed.sync="NRFVisible" variant="outline-primary">SSUNRF</b-button>
