@@ -221,6 +221,7 @@
     </ul>
     <br>
 
+    <!--과제 추가하려면 여기서부터 복사하면 됩니다.-->
     <p>
     =======================================================
       <br>
@@ -303,6 +304,9 @@
     </dl>
     <br>
 
+    <!--=====================-->
+    <!--NRF END  // 과제 추가시 여기까지 복사하면됩니다-->
+    <!--=====================-->
 
 
 
@@ -476,6 +480,91 @@
 
 
 
+    <!--<p>-->
+      <!--=======================================================-->
+      <!--<br>-->
+
+      <!--과제 추가시 샘플입니다-->
+      <!--item.SSUNRF ->  item.sampleSubject  // 엑셀에 추가한 과제 이름 -->
+      <!--NRFVisivle -> SampleVisible  // data에 추가한 변수 이름 -->
+      <!--한번에 주석 해제 하면됩니다. 보통 코드 편집기에서 command + /-->
+
+      <!--<br>-->
+      <!--=====================================================-->
+    <!--</p>-->
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>Journal Articles</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeSciArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeSciArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b>  <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>International Conferences</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeIcfArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeIcfArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>Machine Learning Workshop Papaers/ Neuroscience Conference Abstracts</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeWsArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeWsArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+    <!--<span v-if="!showMain&&NRFVisible"><P><b>Domestic Journal Articles</b></P></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeKciArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeKciArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>Domestic Conference Proceedings</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeKcfArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeKcfArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>국내특허등록</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeKrIssPatentArr) )) "> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
+
+    <!--<span v-if="!showMain&&NRFVisible"><p><b>Software Registrations</b></p></span>-->
+    <!--<br>-->
+    <!--<dl v-for="(item, index) in sortByDate(makeSwArr)" v-if="!showMain&&NRFVisible">-->
+      <!--<dt v-if="(yearChangeDetect(index,sortByDate(makeSwArr) ))"> {{item.year}}</dt>-->
+      <!--<ul >-->
+        <!--<li v-if="item.SSUNRF">  {{item.authorsToString}}"{{item.title}}," Korea Copyright Commission, {{item.month}} {{item.day}}, {{item.year}}. (Registration no. {{item.patents}}) <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>-->
+      <!--</ul>-->
+    <!--</dl>-->
+    <!--<br>-->
+
 
 
   </div>
@@ -503,9 +592,9 @@
         NRFVisible : false,
         ITRCVisible : false,
         IITPVisible : false,
-        nrfArr : [],
-        itrcArr : [],
-        iitpArr : [],
+        nrfArr : [],  //nrf 과제
+        itrcArr : [], //itrc 과제
+        iitpArr : [], //iitp 과제
         sciArr : [],  //sci 저널
         icfArr : [],  //국제 학회
         wsArr : [],  //국제 워크샵
@@ -733,12 +822,6 @@
       },
 
 
-
-
-
-      btnStates(){
-
-      },
     },
     methods : {
 
@@ -796,20 +879,12 @@
 
 
         let obj = object;
-//        console.log("origin obj : " + obj[0]);
         let originObj = obj;
 
 
         obj = obj[0];
-//        console.log("kkk : " + obj[0].type)
-
-//        if(!obj[0].title){
-//          //return originObj;
-//        }
         let tempArr = [];
         let sortedObj = [];
-//        let testArr = [];
-//        let dateTestArr =[];
 
 
 
@@ -820,10 +895,7 @@
           let tempDay = 0;
            tempYear = 365*obj[i].year;
 
-//           console.log("tt : "+this.monthConverter(obj[i].month))
-//          if(this.monthConverter(obj[i].month)){
              tempMonth = 30 * Number(this.monthConverter(obj[i].month));
-//          }
           if(obj[i].day){
              tempDay = obj[i].day;
           }
@@ -832,28 +904,16 @@
           tempObj.index = i;
           tempObj.value = dateValueSum;
           tempArr.push(tempObj);
-//          testArr.push(i);
-//          dateTestArr.push(dateValueSum);
-
-//          console.log(`bp ${i} : ${tempYear} , ${tempMonth}, ${tempDay}, title : ${obj[i].title} tempObj : ${tempObj.index} , ${tempObj.value} ${tempArr[i].index}`);
 
         }
-
-//        console.log(`test : ${testArr} , dateTest : ${dateTestArr}`)
-//        console.log(`bp2 : ${tempArr[6].index}, ${tempArr[2].index},`);
 
         var sortedByDateArr = tempArr.sort((a,b) => b.value - a.value);
-//        console.log("bp3 : " + sortedByDateArr[1].index);
-//        console.log(obj.length)
 
         for(let j = 0 ; j < obj.length ; j++){
-//          console.log("why? : " + sortedByDateArr[j].value)
           sortedObj.push(originObj[0][sortedByDateArr[j].index] );
-
 
         }
 
-//        console.log(obj);
         return sortedObj;
 
 
