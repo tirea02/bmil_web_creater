@@ -36,5 +36,14 @@ npm run dev
 
 # 사용방법
 
-<img src="/src/assets/logo.png">
+<img src="/src/assets/web_sample_page.png">
 
+1. paper, patents 를 보고 싶으면 기본 상태인 show main 버튼이 true 이면 된다. 
+2. Weighted publication 이 보고 싶으면 show main이 true인 상태에서 weighted 버튼을 누르면된다.
+3. 각 과제별 모아보기 기능을 누르면 show main이 false 인 상태에서 nrf, itrc, iitp 각 버튼을 누르면 된다. 
+
+
+
+# 추가방법
+
+> 만약 과제를 추가하고 싶으면 
