@@ -487,6 +487,7 @@
       <!--과제 추가시 샘플입니다-->
       <!--item.SSUNRF ->  item.sampleSubject  // 엑셀에 추가한 과제 이름 -->
       <!--NRFVisivle -> SampleVisible  // data에 추가한 변수 이름 -->
+    <!--<span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span> 해당 내용의 item.SSUITRC , SSUITRC -> sampleSubject로 변경-->
       <!--한번에 주석 해제 하면됩니다. 보통 코드 편집기에서 command + /-->
 
       <!--<br>-->
