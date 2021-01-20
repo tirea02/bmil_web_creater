@@ -105,7 +105,7 @@
     <span v-if="!isWeighted&&isVisible&&showMain"><P><b>Domestic Journal Articles</b></P></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeKciArr)" v-if="!isWeighted&&isVisible&&showMain">
-      <li > {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b></li>
+      <li> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <span v-if="item.academyName"><b>{{item.academyName}}</b>,</span> <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}. </span> <span v-if="item.상태!='submitted'">{{item.month}} {{item.year}}. <b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b></span></li>
     </ul>
     <br>
 
@@ -119,22 +119,28 @@
     <span v-if="!isWeighted&&isVisible&&showMain"><p><b>미국특허등록</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeUsPatentArr)" v-if="!isWeighted&&isVisible&&showMain">
-      <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>US Patent, {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+      <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>US Patent, {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
     </ul>
     <br>
 
-    <span v-if="!isWeighted&&isVisible&&showMain"><p><b>PCT특허등록</b></p></span>
+    <span v-if="!isWeighted&&isVisible&&showMain"><p><b>International Patent Applications</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makePctPatentArr)" v-if="!isWeighted&&isVisible&&showMain">
-      <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> PCT, {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+      <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> PCT, {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
     </ul>
     <br>
 
-    <span v-if="!isWeighted&&isVisible&&showMain"><p><b>국내특허등록</b></p></span>
+    <span v-if="!isWeighted&&isVisible&&showMain"><p><b>Issued Korean Patents</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!isWeighted&&isVisible&&showMain">
-        <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+        <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+    </ul>
+    <br>
 
+    <span v-if="!isWeighted&&isVisible&&showMain"><p><b>Korean Patent Applications</b></p></span>
+    <br>
+    <ul v-for="(item, index) in sortByDate(makeKrAppPatentArr)" v-if="!isWeighted&&isVisible&&showMain">
+      <li >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}}){{item.비고}}</li>
     </ul>
     <br>
 
@@ -182,7 +188,9 @@
     <span v-if="isWeighted&&isVisible&&showMain"><P><b>Domestic Journal Articles</b></P></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeKciArr)" v-if="isWeighted&&isVisible&&showMain">
-      <li v-if="item.weighted"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b></li>
+       <!--{{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b></li>-->
+      <li v-if="item.weighted"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <span v-if="item.academyName"><b>{{item.academyName}}</b>,</span> <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}. </span> <span v-if="item.상태!='submitted'">{{item.month}} {{item.year}}. <b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b></span></li>
+
     </ul>
     <br>
 
@@ -196,21 +204,28 @@
     <span v-if="isWeighted&&isVisible&&showMain"><p><b>미국특허등록</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeUsPatentArr)" v-if="isWeighted&&isVisible&&showMain">
-      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>US Patent, {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>US Patent, {{item.month}} {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
     </ul>
     <br>
 
-    <span v-if="isWeighted&&isVisible&&showMain"><p><b>PCT특허등록</b></p></span>
+    <span v-if="isWeighted&&isVisible&&showMain"><p><b>International Patent Applications</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makePctPatentArr)" v-if="isWeighted&&isVisible&&showMain">
-      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> PCT, {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> PCT, {{item.month}} {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
     </ul>
     <br>
 
-    <span v-if="isWeighted&&isVisible&&showMain"><p><b>국내특허등록</b></p></span>
+    <span v-if="isWeighted&&isVisible&&showMain"><p><b>Issued Korean Patents</b></p></span>
     <br>
     <ul v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="isWeighted&&isVisible&&showMain">
-      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}}, {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+      <li v-if="item.weighted">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}}</li>
+    </ul>
+    <br>
+
+    <span v-if="isWeighted&&isVisible&&showMain"><p><b>Korean Patent Applications</b></p></span>
+    <br>
+    <ul v-for="(item, index) in sortByDate(makeKrAppPatentArr)" v-if="isWeighted&&isVisible&&showMain">
+      <li v-if="item.weighted" >  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}}){{item.비고}}</li>
     </ul>
     <br>
 
@@ -268,7 +283,7 @@
     <dl v-for="(item, index) in sortByDate(makeKciArr)" v-if="!showMain&&NRFVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKciArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>
+        <li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <span v-if="item.academyName"><b>{{item.academyName}}</b>, </span><span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span><span v-if="item.상테!='submitted'">{{item.month}} {{item.year}}. </span><span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>
       </ul>
     </dl>
     <br>
@@ -283,12 +298,22 @@
     </dl>
     <br>
 
-    <span v-if="!showMain&&NRFVisible"><p><b>국내특허등록</b></p></span>
+    <span v-if="!showMain&&NRFVisible"><p><b>Issued Korean Patents</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!showMain&&NRFVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKrIssPatentArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.SSUNRF"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF" target="_blank">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video" target="_blank">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides" target="_blank">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv" target="_blank">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>
+        <li v-if="item.SSUNRF">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}} <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>
+      </ul>
+    </dl>
+    <br>
+
+    <span v-if="!showMain&&NRFVisible"><p><b>Korean Patent Applications</b></p></span>
+    <br>
+    <dl v-for="(item, index) in sortByDate(makeKrAppPatentArr)" v-if="!showMain&&NRFVisible">
+      <dt v-if="(yearChangeDetect(index,sortByDate(makeKrAppPatentArr) )) "> {{item.year}}</dt>
+      <ul >
+        <li  v-if="item.SSUNRF">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}}){{item.비고}} <span v-if="item.SSUNRF">SSUNRF : {{item.SSUNRF}}</span></li>
       </ul>
     </dl>
     <br>
@@ -354,7 +379,7 @@
     <dl v-for="(item, index) in sortByDate(makeKciArr)" v-if="!showMain&&ITRCVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKciArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.SSUITRC"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span></li>
+        <li v-if="item.SSUITRC"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <span v-if="academyName"><b>{{item.academyName}}</b>, </span><span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}} </span><span v-if="item.상태!='submitted'">{{item.month}} {{item.year}}.</span> <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span></li>
       </ul>
     </dl>
     <br>
@@ -369,15 +394,28 @@
     </dl>
     <br>
 
-    <span v-if="!showMain&&ITRCVisible"><p><b>국내특허등록</b></p></span>
+    <span v-if="!showMain&&ITRCVisible"><p><b>Issued Korean Patents</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!showMain&&ITRCVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKrIssPatentArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.SSUITRC"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span></li>
+        <li v-if="item.SSUITRC">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}} <span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span></li>
       </ul>
     </dl>
     <br>
+
+
+    <span v-if="!showMain&&ITRCVisible"><p><b>Korean Patent Applications</b></p></span>
+    <br>
+    <dl v-for="(item, index) in sortByDate(makeKrAppPatentArr)" v-if="!showMain&&ITRCVisible">
+      <dt v-if="(yearChangeDetect(index,sortByDate(makeKrAppPatentArr) )) "> {{item.year}}</dt>
+      <ul >
+        <li  v-if="item.SSUITRC">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}}){{item.비고}} <span v-if="item.SSUITRC">SSUITRC : {{item.SSUITRC}}</span></li>
+      </ul>
+    </dl>
+    <br>
+
+
 
     <span v-if="!showMain&&ITRCVisible"><p><b>Software Registrations</b></p></span>
     <br>
@@ -438,7 +476,7 @@
     <dl v-for="(item, index) in sortByDate(makeKciArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKciArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.EWHAIITP"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.EWHAIITP">EWHAIITP : {{item.EWHAIITP}}</span></li>
+        <li v-if="item.EWHAIITP"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <span v-if="item.academyName"><b>{{item.academyName}}</b>, </span><span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span><span v-if="item.상태!='submitted'">{{item.month}} {{item.year}}. </span><span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.EWHAIITP">EWHAIITP : {{item.EWHAIITP}}</span></li>
       </ul>
     </dl>
     <br>
@@ -453,12 +491,22 @@
     </dl>
     <br>
 
-    <span v-if="!showMain&&IITPVisible"><p><b>국내특허등록</b></p></span>
+    <span v-if="!showMain&&IITPVisible"><p><b>Issued Korean Patents</b></p></span>
     <br>
     <dl v-for="(item, index) in sortByDate(makeKrIssPatentArr)" v-if="!showMain&&IITPVisible">
       <dt v-if="(yearChangeDetect(index,sortByDate(makeKrIssPatentArr) )) "> {{item.year}}</dt>
       <ul >
-        <li v-if="item.EWHAIITP"> {{item.authorsToString}}<span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink">{{item.title}}</b-link><span v-if="item.titleLink">,"</span><span v-if="!item.titleLink">"{{item.title}},"</span> <b>{{item.academyName}}</b>, <span v-if="item.vol">vol.{{item.vol}},</span>  <span v-if="item.no"> no.{{item.no}},</span> <span v-if="item.pp"> pp.{{item.pp}},</span> <span v-if="item.상태&&item.상태!='published'">{{item.상태}}</span>{{item.month}} {{item.year}}. <span v-if="item.IF">IF:{{item.IF}}({{item.IF기준년도}})</span><b-link v-if="item.PDF" v-bind:href="item.PDF">[PDF]</b-link> <b-link v-if="item.Video" v-bind:href="item.Video">[Video]</b-link><b-link v-if="item.Slides" v-bind:href="item.Slides">[Slides]</b-link> <b-link v-if="item.arXiv" v-bind:href="item.arXiv">[arXiv]</b-link> <b>{{item.비고}}</b> <span v-if="item.EWHAIITP">EWHAIITP : {{item.EWHAIITP}}</span></li>
+        <li v-if="item.EWHAIITP">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span>Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}})<span v-if="item.issuedNo">, issued on  {{item.iss_month}} {{item.iss_day}}, {{item.iss_year}}. (Patent no. {{item.issuedNo}})</span>{{item.비고}} <span v-if="item.EWHAIITP">EWHAIITP : {{item.EWHAIITP}}</span></li>
+      </ul>
+    </dl>
+    <br>
+
+    <span v-if="!showMain&&IITPVisible"><p><b>Korean Patent Applications</b></p></span>
+    <br>
+    <dl v-for="(item, index) in sortByDate(makeKrAppPatentArr)" v-if="!showMain&&IITPVisible">
+      <dt v-if="(yearChangeDetect(index,sortByDate(makeKrAppPatentArr) )) "> {{item.year}}</dt>
+      <ul >
+        <li  v-if="item.EWHAIITP">  {{item.authorsToString}}  <span v-if="item.titleLink">"</span><b-link v-if="item.titleLink" v-bind:href="item.titleLink" target="_blank">{{item.title}}</b-link><span v-if="item.titleLink">,"</span> <span v-if="!item.titleLink"> "{{item.title}},"</span> Korean Patent, filed on {{item.month}} {{item.day}}, {{item.year_1}} (Application no. {{item.patents}}){{item.비고}} <span v-if="item.EWHAIITP">EWHAIITP : {{item.EWHAIITP}}</span></li>
       </ul>
     </dl>
     <br>
@@ -576,7 +624,7 @@
 
 
 <script>
-  import userList from "./assets/data/lab-data-fixed.json";
+  import userList from "./assets/data/lab-data-12-29.json";
 
 
 
@@ -602,6 +650,7 @@
         kciArr : [], //Domestic Journal Articles
         kcfArr : [], //Domestic Conference Proceedings
         krIssPatentArr : [], //국내특허등록
+        krAppPatentArr : [], //국내특허출원
         usPatentArr : [], //미국특허등록
         pctPatentArr : [], //pct 특허 출원
         swArr : [], //소프트웨어 등록
@@ -785,6 +834,19 @@
         })
       },
 
+      makeKrAppPatentArr() {
+        return userList.users.map((items) => {
+
+
+          if (items["type"]==="국내특허출원") {
+
+            this.krAppPatentArr.push(items);
+          }
+
+          return this.krAppPatentArr;
+        })
+      },
+
       makeUsPatentArr() {
         return userList.users.map((items) => {
 
@@ -894,9 +956,11 @@
           let tempYear = 0;
           let tempMonth = 0;
           let tempDay = 0;
-           tempYear = 365*obj[i].year;
+          tempYear = 365*obj[i].year;
 
-             tempMonth = 30 * Number(this.monthConverter(obj[i].month));
+          if(obj[i].month) {
+            tempMonth = 30 * Number(this.monthConverter(obj[i].month));
+          }
           if(obj[i].day){
              tempDay = obj[i].day;
           }
@@ -946,6 +1010,8 @@
             return 11
           case  "December" :
             return 12
+          case   "Sub" :    //submitted일때 가장 먼저 정렬되기 위해 필요
+            return 13
           defalut :
             return 0
         }
