@@ -1,4 +1,4 @@
-# bmil-web-creater
+# bmil-web-creator
 
 > A Vue.js project for bmilWeb
 
